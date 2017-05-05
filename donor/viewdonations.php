@@ -112,7 +112,7 @@ $s="select * from camp,donation where camp.camp_id=donation.camp_id and donation
 		
 	</div>
 		<div class="copy">
-			<p class="title">© All Rights Reserved | Design by Mr. Bhatia |</p>
+			<p class="title">© All Rights Reserved | Design by CSE-SKF-GroupII |</p>
 		</div>
 	<div class="clear"></div>
 </div>
