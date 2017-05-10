@@ -98,9 +98,10 @@
 
 <tr><td class="lefttd"><a href="deletenews.php">Delete News</a></td></tr>
 
-<?php }?>
+<tr><td class="lefttd"><a href="viewadver.php">View Advertusement</a></td></tr>
 
 <tr><td class="lefttd"><a href="addadvertise.php">Add Advertisement</a></td></tr>
+<?php }?>
 
 <?php if($_SESSION["usertype"]=="Admin")
 {?>
@@ -111,7 +112,6 @@
 
 <tr><td class="lefttd"><a href="viewcity.php">View City</a></td></tr>
 <tr><td class="lefttd"><a href="viewstate.php">View State</a></td></tr>
-<tr><td class="lefttd"><a href="viewadver.php">View Advertusement</a></td></tr>
 <tr><td class="lefttd"><a href="viewnews.php">View News</a></td></tr>
 
 <tr><td class="lefttd"><a href="viewbloodgroup.php">View Blood Group</a></td></tr>

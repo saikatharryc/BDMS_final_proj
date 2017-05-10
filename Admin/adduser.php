@@ -53,8 +53,11 @@ if($_SESSION["loginstatus"]=="")
 if(isset($_POST["sbmt"]))
 {
 	$cn=makeconnection();
-	$s="insert into users values('" . $_POST["t1"] . "','" .$_POST["t2"] . "','". $_POST["s1"] ."')";
-	mysqli_query($cn,$s);
+	$s="insert into users values('','". $_POST["t1"] . "','" .$_POST["t2"] . "','". $_POST["s1"] ."')";
+  //print_r($s); exit;
+	if(!mysqli_query($cn,$s)){
+     printf("Errormessage: %s\n", mysqli_error($cn));
+  }
 	mysqli_close($cn);
 	echo "<script>alert('Record Save');</script>";
 }
@@ -70,7 +73,7 @@ if(isset($_POST["sbmt"]))
 <tr><td class="lefttd">Confirm Password</td><td><input type="password" name="t3" required="required" pattern="[a-zA-Z0-9]{3,10}" title="please enter only character and numbers between 3 to 10 for password" /></td></tr>
 <tr><td class="lefttd">Type Of User</td><td><select name="s1" required><option value="">Select</option>
 <option value="Admin">Admin</option>
-<option value="General">General</option>
+<option value="General">Organization</option>
 </select></td></tr>
 <tr><td>&nbsp;</td><td><input type="submit" value="SAVE" name="sbmt"></td></tr>
 </table>
