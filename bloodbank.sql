@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 06, 2017 at 12:41 AM
+-- Generation Time: May 10, 2017 at 03:28 AM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.23
 
@@ -90,7 +90,8 @@ INSERT INTO `camp` (`camp_id`, `camp_title`, `organised_by`, `state`, `city`, `p
 (1, 'Ramgarhia Engg Collage', 'Ramgarhia Counsil', 1, 1, 'blood_donation_camp.jpg', 'A Blood Donation Camp at Ramgarhia Engg Collage organized by Ramgarhia consial , Phagwara.'),
 (7, ' Lovely Professional University', 'Lovely Professional University', 1, 7, 'B.D camp 034.jpg', 'A Blood Donation Camp at Lovely Professional University organized by Lovely Professional University , Jalandhar.'),
 (8, 'Guru Nanak College', 'Lions Club', 1, 1, 'p36.jpg', 'A Blood Donation Camp at G.N.C College, Phagwara organized by Lions Club, Phagwara.'),
-(9, 'Apee Jay College', 'Human Welfare Society', 1, 1, 'p38_2.jpg', 'A Blood Donation Camp at Apee-Jay College, Jalandhar organized by Human Welfare Society, Jalandhar.\n ');
+(9, 'Apee Jay College', 'Human Welfare Society', 1, 1, 'p38_2.jpg', 'A Blood Donation Camp at Apee-Jay College, Jalandhar organized by Human Welfare Society, Jalandhar.\n '),
+(10, 'sanjoycamp', 'sanjoyorg', 6, 8, '15940497_624586501081396_923954112084049212_n.jpg', 'sannjoy rokto debe');
 
 -- --------------------------------------------------------
 
@@ -113,7 +114,8 @@ CREATE TABLE `city` (
 INSERT INTO `city` (`city_id`, `city_name`, `pin_code`, `district`, `state`) VALUES
 (1, 'phagwara', '144401', 'kapurthala', 1),
 (4, 'faridabad', '121001', 'Gurgaon', 2),
-(7, 'jalandhar', '144001', 'jalandhar', 1);
+(7, 'jalandhar', '144001', 'jalandhar', 1),
+(8, 'kolkata', '700001', 'kolkata', 6);
 
 -- --------------------------------------------------------
 
@@ -324,7 +326,8 @@ INSERT INTO `state` (`state_id`, `state_name`) VALUES
 (2, 'delhi'),
 (3, 'Andhra Pradesh'),
 (4, 'Bihar'),
-(5, 'Assam');
+(5, 'Assam'),
+(6, 'WestBengal');
 
 -- --------------------------------------------------------
 
@@ -333,19 +336,19 @@ INSERT INTO `state` (`state_id`, `state_name`) VALUES
 --
 
 CREATE TABLE `users` (
-  `username` varchar(100) NOT NULL,
-  `pwd` varchar(100) NOT NULL,
-  `typeofuser` varchar(100) NOT NULL,
-  `id` int(11) NOT NULL
+  `id` int(11) NOT NULL,
+  `username` varchar(200) NOT NULL,
+  `pwd` varchar(200) NOT NULL,
+  `typeofuser` enum('Admin','General') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`username`, `pwd`, `typeofuser`, `id`) VALUES
-('saikat', 'saikat', 'Admin', 3),
-('sandip', 'sandip', 'General', 4);
+INSERT INTO `users` (`id`, `username`, `pwd`, `typeofuser`) VALUES
+(1, 'saikat', 'saikat', 'Admin'),
+(2, 'sanjoyorg', 'sanjoyorg', 'General');
 
 --
 -- Indexes for dumped tables
@@ -441,12 +444,12 @@ ALTER TABLE `bloodgroup`
 -- AUTO_INCREMENT for table `camp`
 --
 ALTER TABLE `camp`
-  MODIFY `camp_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `camp_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `city`
 --
 ALTER TABLE `city`
-  MODIFY `city_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `city_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `contacts`
 --
@@ -481,12 +484,12 @@ ALTER TABLE `requestes`
 -- AUTO_INCREMENT for table `state`
 --
 ALTER TABLE `state`
-  MODIFY `state_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `state_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
