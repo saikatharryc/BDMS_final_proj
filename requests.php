@@ -163,17 +163,17 @@ $s="select * from bloodgroup";
 <div class="wrap">
 <div class="footer">
 	<div class="f_nav">
-		<ul>
+		<!-- <ul>
 			<li class="active"><a href="index.php">Home</a></li>			
 			<li><a href="donar.php">Donor</a></li>
             <li><a href="login.php">log In</a></li>
             <li><a href="aboutus.php">About</a></li>
             <li><a href="contact.php">Contact Us</a></li>
 			
-            </ul>
+            </ul> -->
 	</div>
 		<div class="copy">
-			<p class="title">© All Rights Reserved </p>
+			<p class="title">Group II -SKFGI- 2k17 Batch CSE </p>
 		</div>
 	<div class="clear"></div>
 </div>
@@ -183,7 +183,18 @@ $s="select * from bloodgroup";
 <?php
 if(isset($_POST["sbmt"])) 
 {
-			
+			//username for SMS gateway
+ $user = "vkyvenkat13";
+// // API KEY for SMS gateway
+$apikey = "c9r0lXsciQa07l3CaJ6E"; 
+// //Sender ID, for SMS gateway
+$senderid  =  "CUVREV"; 
+// // mobile number comes from $numbr
+$mobile  = $_POST['t3']; 
+// // Message content
+$message = "Hi ".$_POST['t1']." ,\n Your Request for ".$_POST["t4"]." blood has been recorded.  \n we will contact you soon.\n Thank You!"; 
+$message = urlencode($message);
+
 		
 	$cn=makeconnection();
 		$d=$_POST["year"]."/".$_POST["month"]."/".$_POST["day"];
@@ -192,8 +203,18 @@ if(isset($_POST["sbmt"]))
 			
 	$q=mysqli_query($cn,$s);
 	mysqli_close($cn);
+	
+	$ch = curl_init("http://smshorizon.co.in/api/sendsms.php?user=".$user."&apikey=".$apikey."&mobile=".$mobile."&senderid=".$senderid."&message=".$message."&type=txt"); 
+    curl_setopt($ch, CURLOPT_HEADER, 0);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    $output = curl_exec($ch);      
+    //echo ($output);exit;
+     curl_close($ch); 
+     
+
 	if($q>0)
 	{
+
 	echo "<script>alert('Record Save');</script>";
 	}
 	else

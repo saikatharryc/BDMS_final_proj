@@ -155,17 +155,17 @@ We request donors to update contact details regularly.</p>
 <div class="wrap">
 <div class="footer">
 	<div class="f_nav">
-		<ul>
+<!-- 		<ul>
 			<li class="active"><a href="index.php">Home</a></li>			
 			<li><a href="donar.php">Donor</a></li>
             <li><a href="login.php">log In</a></li>
             <li><a href="aboutus.php">About</a></li>
             <li><a href="contact.php">Contact Us</a></li>
 			
-            </ul>
+            </ul> -->
 	</div>
 		<div class="copy">
-			<p class="title">© All Rights Reserved </p>
+			<p class="title">Group II -SKFGI- 2k17 Batch CSE </p>
 		</div>
 	<div class="clear"></div>
 </div>

@@ -99,7 +99,7 @@
             </ul>
 	</div>
 		<div class="copy">
-			<p class="title">© All Rights Reserved </p>
+			<p class="title">  </p>
 		</div>
 	<div class="clear"></div>
 </div>

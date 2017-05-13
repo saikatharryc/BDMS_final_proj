@@ -135,7 +135,7 @@ Apart from enjoying our refreshments and souvenir, other things to help you reco
             </ul>
 	</div>
 		<div class="copy">
-			<p class="title">© All Rights Reserved </p>
+			<p class="title">  </p>
 		</div>
          <div class="clear"></div>	
 				</div>	
