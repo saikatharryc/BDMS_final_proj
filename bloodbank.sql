@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 10, 2017 at 03:28 AM
+-- Generation Time: May 13, 2017 at 04:02 AM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.23
 
@@ -136,11 +136,10 @@ CREATE TABLE `contacts` (
 --
 
 INSERT INTO `contacts` (`row_id`, `name`, `email`, `mobile`, `subj`) VALUES
-(1, 'nannu', 'bawa12@ymail.com', '98889619909', 'save life'),
-(2, 'manu', 'manukaler@yahoo.com', '9888889765', 'save life'),
-(3, 'neeru', 'neeru45@gmail.com', '9463958058', 'give blooooooood'),
-(4, 'paras', 'bhatia34@gmail.com', '9216291294', 'save life'),
-(10, 'herry', 'herry@ymaol.com', '8790675438', 'give me a blood');
+(1, 'sandip', 'sandipgh19@gmail.com', '8017057028', 'save life'),
+(2, 'sanjoy', 'sanjoyhalder94@gmail.com', '8981679056', 'save life'),
+(3, 'saikat', 'saikat@saikatharryc.me', '8373886873', 'give blooooooood'),
+(4, 'subrata', 'subratamanna485@gmail.com', '8478094744', 'save life');
 
 -- --------------------------------------------------------
 
@@ -294,17 +293,6 @@ CREATE TABLE `requestes` (
   `reqdate` datetime NOT NULL,
   `detail` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `requestes`
---
-
-INSERT INTO `requestes` (`req_id`, `name`, `gender`, `age`, `mobile`, `email`, `bgroup`, `reqdate`, `detail`) VALUES
-(7, 'balwant singh', 'male', '22', '8427420298', 'balwant11@gmail.com', 19, '2015-01-15 00:00:00', 'save life'),
-(8, 'japleen', 'female', '22', '9216291294', 'jsimran08@gmail.com', 13, '2014-01-12 00:00:00', 'save life'),
-(9, 'Naresh', 'female', '21', '8427420291', 'nareshheer719@gmail.com', 17, '2015-01-18 00:00:00', 'save life'),
-(10, 'Taran', 'male', '55', '7589325050', 'taran@ymail.com', 14, '2012-01-29 00:00:00', ''),
-(11, 'saikat', 'male', '21', '8373886873', 'saikatchakrabortty2@gmail.com', 19, '2012-01-02 00:00:00', 'some details goes here');
 
 -- --------------------------------------------------------
 
@@ -479,7 +467,7 @@ ALTER TABLE `news`
 -- AUTO_INCREMENT for table `requestes`
 --
 ALTER TABLE `requestes`
-  MODIFY `req_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `req_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 --
 -- AUTO_INCREMENT for table `state`
 --
