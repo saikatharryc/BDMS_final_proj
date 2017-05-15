@@ -60,8 +60,10 @@
          <tr><td colspan="2">&nbsp;</td></tr>
         <tr><td colspan="2" align="center"><img src="Images/search.png" height="80px" /></td></tr>
         <tr><td colspan="2">&nbsp;</td></tr>
-        <tr><td class="lefttd" style="padding-left:40px">Select Blood Group </td><td><select name="s2" required><option value="">Select</option>
-
+      <!--  <tr><td class="lefttd" style="padding-left:40px">Select Blood Group </td><td><!--<select name="s2" required><option value="">Select</option>!-->
+      <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+        <tr><td class="lefttd" align="center">Enter Adhaar No:</td><td><input type="number" name="t3"  required="required" pattern="[0-9]{10,12}" title="please enter only numbers between 10 to 12 for adhaar no." /></td></tr>
+<!--
 <?php
 $cn=makeconnection();
 $s="select * from bloodgroup";
@@ -106,7 +108,7 @@ $s="select * from bloodgroup where bg_id='" .$_POST["s2"] ."'";
 		
 	mysqli_close($cn);
 }
-?>
+?>!-->
 
 </td></tr>
   <tr><td colspan="2">&nbsp;
@@ -131,17 +133,17 @@ $s="select * from bloodgroup where bg_id='" .$_POST["s2"] ."'";
 <div class="wrap">
 <div class="footer">
 	<div class="f_nav">
-		<ul>
+		<!-- <ul>
 			<li class="active"><a href="index.php">Home</a></li>			
 			<li><a href="donar.php">Donor</a></li>
             <li><a href="login.php">log In</a></li>
             <li><a href="aboutus.php">About</a></li>
             <li><a href="contact.php">Contact Us</a></li>
 			
-            </ul>
+            </ul> -->
 	</div>
 		<div class="copy">
-			<p class="title">  </p>
+			<p class="title">Group II -SKFGI- 2k17 Batch CSE </p>
 		</div>
 	<div class="clear"></div>
 </div>

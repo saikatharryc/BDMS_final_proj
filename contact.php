@@ -52,7 +52,7 @@
 		<?php require('header.php');?>
 	</div>
     <div>
-<div style="height:500px; width:100%; margin:auto; margin-top:10px; margin-bottom:10px; background-color:#f8f1e4; border:2px solid red; box-shadow:4px 1px 20px black;">
+<div style="height:530px; width:100%; margin:auto; margin-top:0px; margin-bottom:0px; background-color:#f8f1e4; border:2px solid red; box-shadow:4px 1px 20px black;">
      <form method="post" enctype="multipart/form-data">
 
 
@@ -78,8 +78,7 @@
 		  </div>
 </form>
         </div>
-         </div> 
-         </div>
+         
         <div class="clear"></div>
 <div class="ftr-bg">
 <div class="wrap">
