@@ -50,7 +50,7 @@
 <div class="nav_bg">
 <div class="wrap">
 		<ul class="nav">
-			<li class="active"><a href="index.php">Home</a></li>	
+	<!--		<li class="active"><a href="index.php">Home</a></li>	
 			<li><a href="index1.php">Donor Registration</a></li>            
 			<li><a href="requests.php">send Request</a></li>
             <li><a href="viewrequest.php">View Request</a></li>
@@ -59,7 +59,8 @@
             <li><a href="search.php">Search</a></li>
             <li><a href="contact.php">Contact Us</a></li>
            	<li><a href="aboutus.php">About</a></li>
-            </ul>
+            </ul>!-->
+            <?php require('header.php');?>
 	</div>
   
    
@@ -123,27 +124,29 @@ $s="select * from donarregistration,bloodgroup where donarregistration.b_id='". 
 </form>
 </div>
 
-       
-        <div class="clear"></div>
+     <div class="clear"></div>
 <div class="ftr-bg">
 <div class="wrap">
 <div class="footer">
-	<div class="f_nav">
-		<ul>
-			<li class="active"><a href="index.php">Home</a></li>			
-			<li><a href="donar.php">Donor</a></li>
+  <div class="f_nav">
+    <!-- <ul>
+      <li class="active"><a href="index.php">Home</a></li>      
+      <li><a href="donar.php">Donor</a></li>
             <li><a href="login.php">log In</a></li>
             <li><a href="aboutus.php">About</a></li>
             <li><a href="contact.php">Contact Us</a></li>
-			
-            </ul>
-	</div>
-		<div class="copy">
-			<p class="title">  | Design by CSE-SKF-GroupII |</p>
-		</div>
-	<div class="clear"></div>
+      
+            </ul> -->
+  </div>
+    <div class="copy">
+      <p class="title">Group II -SKFGI- 2k17 Batch CSE </p>
+    </div>
+  <div class="clear"></div>
 </div>
 </div>
+</div>
+    
+  
 </div>
 		
 
