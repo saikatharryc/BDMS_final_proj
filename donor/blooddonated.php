@@ -41,12 +41,12 @@
 
 <?php
 
-if($_SESSION['donorstatus']=="")
+if($_SESSION['loginstatus']=="")
 {
-	header("location:../login.php");
+	header("location:admimlogin.php");
 }
 ?>
-<?php include('function.php'); ?>
+<?php include('admin/topbar.php'); ?>
  <div class="h_bg">
 <div class="wrap">
 <div class="header">
@@ -57,7 +57,7 @@ if($_SESSION['donorstatus']=="")
 </div>
 </div>
 <div class="nav_bg">
-<div class="wrap">
+<!--<div class="wrap">
 		<ul class="nav">
 			<li class="active"><a href="chngpwd.php">Change Password</a></li>	
 			<li><a href="updateprofile.php">Update Profile</a></li>            
@@ -67,7 +67,7 @@ if($_SESSION['donorstatus']=="")
             <li><a href="logout.php">log Out</a></li>
            
             </ul>
-	</div>
+	</div>!-->
 <div style="height:400px; width:600px; margin:auto; margin-top:50px; margin-bottom:50px; background-color:#f8f1e4; border:2px solid red; box-shadow:4px 1px 20px black;">
      <form method="post" enctype="multipart/form-data">
 <table cellpadding="0" cellspacing="0" width="500px" class="tableborder" style="margin:auto" >

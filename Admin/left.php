@@ -87,6 +87,8 @@
 
 <?php }?>
 
+<tr><td class="lefttd"><a href="donor/blooddonated.php">Blood Donated</a></td></tr>
+
 <tr><td class="lefttd"><a href="addgallery.php">Add Gallery</a></td></tr>
 
 <?php if($_SESSION["usertype"]=="Admin")
