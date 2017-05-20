@@ -53,10 +53,10 @@ if($_SESSION['loginstatus']=="")
 <table border="0" align="center" width="400" height="300px" class="shaddoww">
 <tr><td colspan="2" align="center" class="toptd">Add Donar Details </td></tr>
 <tr><td colspan="2">&nbsp;</td></tr>
-<tr><td class="lefttd">Donar Name</td><td><input type="text" name="t3" value="<?php if(isset($_POST["show"])){echo $_POST["t3"];} ?>"/ required="required" pattern="[a-zA-Z0-9 ]{5,15}" title="please enter donar name"></td></tr>
+<tr><td class="lefttd">Donar Name</td><td><input type="text" name="t1" required="required" pattern="[a-zA-Z0-9 ]{5,15}" title="please enter donar name"></td></tr>
 </td></tr>
 
-<tr><td class="lefttd">Unit</td><td><input type="text" name="t3" value="<?php if(isset($_POST["show"])){echo $_POST["t3"];} ?>"/ required="required" pattern="[a-zA-Z0-9 ]{5,15}" title="please enter blood unit"></td></tr>
+<tr><td class="lefttd">Unit</td><td><input type="number" name="t2" required="required" pattern="[a-zA-Z0-9 ]{5,15}" title="please enter blood unit"></td></tr>
 </td></tr>
 
 <tr><td class="lefttd">Select Camp </td><td><select name="s1" required><option value="">Select</option>
@@ -90,7 +90,7 @@ $s="select * from camp";
 </select>
 
 </td></tr>
-<tr><td class="lefttd">Adhaar No</td><td><input type="text" name="t3" value="<?php if(isset($_POST["show"])){echo $_POST["t3"];} ?>"/ required="required" pattern="[a-zA-Z0-9 ]{5,15}" title="please enter donar adhaar no"></td></tr>
+<tr><td class="lefttd">Adhaar No</td><td><input type="number" name="t3" required="required" pattern="[a-zA-Z0-9 ]{5,15}" title="please enter donar adhaar no"></td></tr>
 </td></tr>
 </td></tr>
 
@@ -103,49 +103,21 @@ $s="select * from camp";
 
    </div>
     </center>
- <!--   
+
     <?php
 if(isset($_POST["sbmt"])) 
 {
-$target_dir = "pic/";
-$target_file = $target_dir . basename($_FILES["t1"]["name"]);
-$uploadOk = 1;
-$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-// Check if image file is a actual image or fake image
 
-    $check = getimagesize($_FILES["t1"]["tmp_name"]);
-    if($check !== false) {
-      //  echo "File is an image - " . $check["mime"] . ".";
-        $uploadOk = 1;
-    } else {
-        echo "File is not an image.";
-        $uploadOk = 0;
-    }
-
-// Check if file already exists
-if (file_exists($target_file)) {
-    echo "Sorry, file already exists.";
-    $uploadOk = 0;
-}
-//aloow certain file formats
-    if($imageFileType != "jpg" && $imageFileType !="png" && $imageFileType !="jpeg" && $imageFileType !="gif"){
-        echo "sorry, only jpg, jpeg, Png & gif files are allowed.";
-        $uploadok=0;
-    }else{
-        if(move_uploaded_file($_FILES["t1"]["tmp_name"], $target_file)){
-        $cn=makeconnection();
-            $s="insert into gallary(camp_id,title,pic) values('" . $_POST["s1"] ."','" . $_POST["t3"] . "','" . basename($_FILES["t1"]["name"]) . "')";
-    mysqli_query($cn,$s);
+    $cn=makeconnection();
+            $s="insert into blooddonated(name,unit,camp,adhaar) values('" . $_POST["t1"] ."','" . $_POST["t2"] . "','" . $_POST["s1"] . "','" . $_POST["t3"] . "')";
+            
+            
+    $q=mysqli_query($cn,$s);
     mysqli_close($cn);
     echo "<script>alert('Record Save');</script>";
-            
-        } else{
-            echo "sorry there was an error uploading your file.";
-        }   
-    
-    }
+
 }
-?> -->
+?>
 <?php include('bottom.php'); ?>
    
 </body>
