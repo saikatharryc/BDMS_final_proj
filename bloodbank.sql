@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.7.0
+-- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: May 13, 2017 at 04:02 AM
--- Server version: 10.1.13-MariaDB
--- PHP Version: 5.6.23
+-- Host: localhost
+-- Generation Time: May 20, 2017 at 06:21 AM
+-- Server version: 10.1.22-MariaDB
+-- PHP Version: 7.1.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -40,6 +42,28 @@ CREATE TABLE `advertisement` (
 
 INSERT INTO `advertisement` (`adv_id`, `camp_title`, `org_by`, `pic`, `detail`) VALUES
 (4, 'Ramgarhia Engg Collage', 'Ramgarhia education consial', '2.jpg', 'Blood donation camp Organised by REC.  One who donate get certificate by REC\r\nThat can help you also to gets blood in jeopard time');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `blooddonated`
+--
+
+CREATE TABLE `blooddonated` (
+  `id` int(11) NOT NULL,
+  `name` varchar(30) NOT NULL,
+  `unit` varchar(10) NOT NULL,
+  `camp` varchar(200) NOT NULL,
+  `adhaar` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `blooddonated`
+--
+
+INSERT INTO `blooddonated` (`id`, `name`, `unit`, `camp`, `adhaar`) VALUES
+(1, 'Sandip', '1', '10', '121324553'),
+(2, 'aadwew', '32', '1', '121334');
 
 -- --------------------------------------------------------
 
@@ -336,7 +360,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `username`, `pwd`, `typeofuser`) VALUES
 (1, 'saikat', 'saikat', 'Admin'),
-(2, 'sanjoyorg', 'sanjoyorg', 'General');
+(2, 'sanjoyorg', 'sanjoyorg', 'General'),
+(3, 'sandip', 'sandip', 'Admin');
 
 --
 -- Indexes for dumped tables
@@ -347,6 +372,12 @@ INSERT INTO `users` (`id`, `username`, `pwd`, `typeofuser`) VALUES
 --
 ALTER TABLE `advertisement`
   ADD PRIMARY KEY (`adv_id`);
+
+--
+-- Indexes for table `blooddonated`
+--
+ALTER TABLE `blooddonated`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `bloodgroup`
@@ -424,6 +455,11 @@ ALTER TABLE `users`
 ALTER TABLE `advertisement`
   MODIFY `adv_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
+-- AUTO_INCREMENT for table `blooddonated`
+--
+ALTER TABLE `blooddonated`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
 -- AUTO_INCREMENT for table `bloodgroup`
 --
 ALTER TABLE `bloodgroup`
@@ -442,7 +478,7 @@ ALTER TABLE `city`
 -- AUTO_INCREMENT for table `contacts`
 --
 ALTER TABLE `contacts`
-  MODIFY `row_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `row_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `donarregistration`
 --
@@ -467,7 +503,7 @@ ALTER TABLE `news`
 -- AUTO_INCREMENT for table `requestes`
 --
 ALTER TABLE `requestes`
-  MODIFY `req_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `req_id` int(100) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `state`
 --
@@ -477,7 +513,8 @@ ALTER TABLE `state`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
