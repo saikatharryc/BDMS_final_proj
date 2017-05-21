@@ -44,7 +44,7 @@
 <div class="wrap">
 <div class="header">
 		<div class="logo">
-			<h1><a href="index.php"><img src="Images/logo.png" alt=""></a></h1>
+			<h1><a href="index.php"><img src="image1/1.jpg" alt=""></a></h1>
 		</div>
 	</div>
 </div>

@@ -10,7 +10,7 @@
 <div class="wrap">
 <div class="header">
 		<div class="logo">
-			<h1><img src="images/logo.png" alt=""></h1>
+			<h1><img src="image1/1.jpg" alt=""></h1>
 		</div>
 	</div>
 </div>
