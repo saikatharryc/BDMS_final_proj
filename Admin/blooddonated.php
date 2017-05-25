@@ -2,12 +2,26 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Untitled Document</title>
 <link href="StyleSheet.css" rel="stylesheet" type="text/css" />
 <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 <!--slider-->
 <link href="css/flexslider.css" rel="stylesheet" type="text/css" media="all" />
 <script src="js/jquery-1.7.1.min.js" type="text/javascript"></script>
@@ -29,6 +43,11 @@
              }
          });
      });
+
+     $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+
   </script>
 </head>
 <body>
@@ -90,7 +109,10 @@ $s="select * from camp";
 </select>
 
 </td></tr>
-<tr><td class="lefttd">Adhaar No</td><td><input type="number" name="t3" required="required" pattern="[a-zA-Z0-9 ]{5,15}" title="please enter donar adhaar no"></td></tr>
+<tr><td class="lefttd">Donation Date</td><td><input type="text" name="t3" required="required"  id="datepicker" title="please enter donation date"></td></tr>
+
+</td></tr>
+<tr><td class="lefttd">Adhaar No</td><td><input type="number" name="t4" required="required" pattern="[a-zA-Z0-9 ]{5,15}" title="please enter donar adhaar no"></td></tr>
 </td></tr>
 </td></tr>
 
@@ -109,7 +131,7 @@ if(isset($_POST["sbmt"]))
 {
 
     $cn=makeconnection();
-            $s="insert into blooddonated(name,unit,camp,adhaar) values('" . $_POST["t1"] ."','" . $_POST["t2"] . "','" . $_POST["s1"] . "','" . $_POST["t3"] . "')";
+            $s="insert into blooddonated(name,unit,camp,date,adhaar) values('" . $_POST["t1"] ."','" . $_POST["t2"] . "','" . $_POST["s1"] . "','" . $_POST["t3"] . "','" . $_POST["t4"] . "')";
             
             
     $q=mysqli_query($cn,$s);
