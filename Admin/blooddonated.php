@@ -112,7 +112,7 @@ $s="select * from camp";
 </select>
 
 </td></tr>
-<tr><td class="lefttd">Donation Date</td><td><input type="text" name="t3" required="required"  id="datepicker" title="please enter donation date"></td></tr>
+<tr><td class="lefttd">Donation Date</td><td><input type="date" name="t3" required="required"  id="datepicker" title="please enter donation date"></td></tr>
 
 </td></tr>
 <tr><td class="lefttd">Contact No</td><td><input type="number" name="t4" required="required" pattern="[a-zA-Z0-9 ]{5,15}" title="please enter donar contact no"></td></tr>
