@@ -139,7 +139,7 @@ if(isset($_POST["sbmt"]))
 {
 
     $cn=makeconnection();
-            $s="insert into blooddonated(name,gender,unit,camp,date,contact,adhaar) values('" . $_POST["t1"] ."','" . $_POST["r1"] . "','" . $_POST["t2"] . "','" . $_POST["s1"] . "','" . $_POST["t3"] . "','" . $_POST["t4"] . "','" . $_POST["t5"] . "')";
+            $s="insert into blooddonated(id,name,gender,unit,camp,date,contact,adhaar) values('','" . $_POST["t1"] ."','" . $_POST["r1"] . "','" . $_POST["t2"] . "','" . $_POST["s1"] . "','" . $_POST["t3"] . "','" . $_POST["t4"] . "','" . $_POST["t5"] . "')";
             
             
     $q=mysqli_query($cn,$s);
