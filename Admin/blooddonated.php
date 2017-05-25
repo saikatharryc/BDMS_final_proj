@@ -113,7 +113,35 @@ $s="select * from camp";
 
 </td></tr>
 <tr><td class="lefttd">Donation Date</td><td><input type="date" name="t3" required="required"  id="datepicker" title="please enter donation date"></td></tr>
+<tr><td class="lefttd" align="center">Select Blood Group </td><td><select name="t9" required><option value="">Select</option>
+<?php
+$cn=makeconnection();
+$s="select * from bloodgroup";
+	$result=mysqli_query($cn,$s);
+	$r=mysqli_num_rows($result);
+	//echo $r;
+	while($data=mysqli_fetch_array($result))
+	{
+		if(isset($_POST["show"])&& $data[0]==$_POST["s2"])
+		{
+			echo "<option value=$data[0] selected>$data[1]</option>";
+		}
+		else
+		{
+			echo "<option value=$data[0]>$data[1]</option>";
+		}
+		
+		
+		
+	}
+	mysqli_close($cn);
 
+?>
+
+
+
+</select></td></tr>
+ <tr><td>&nbsp;</td></tr>
 </td></tr>
 <tr><td class="lefttd">Contact No</td><td><input type="number" name="t4" required="required" pattern="[a-zA-Z0-9 ]{5,15}" title="please enter donar contact no"></td></tr>
 </td></tr>
@@ -139,13 +167,19 @@ if(isset($_POST["sbmt"]))
 {
 
     $cn=makeconnection();
-            $s="insert into blooddonated(id,name,gender,unit,camp,date,contact,adhaar) values('','" . $_POST["t1"] ."','" . $_POST["r1"] . "','" . $_POST["t2"] . "','" . $_POST["s1"] . "','" . $_POST["t3"] . "','" . $_POST["t4"] . "','" . $_POST["t5"] . "')";
+            $s="insert into blooddonated(id,name,gender,groups,unit,camp,date,contact,adhaar) values('','" . $_POST["t1"] ."','" . $_POST["r1"] . "','" . $_POST["t9"] . "','" . $_POST["t2"] . "','" . $_POST["s1"] . "','" . $_POST["t3"] . "','" . $_POST["t4"] . "','" . $_POST["t5"] . "')";
             
             
     $q=mysqli_query($cn,$s);
-    mysqli_close($cn);
-    echo "<script>alert('Record Save');</script>";
+    
+    //echo $s;
 
+if (!$q)
+  {
+  echo("Error description: " . mysqli_error($cn));
+  }
+echo "<script>alert('Record Save');</script>";
+mysqli_close($cn);
 }
 ?>
 <?php include('bottom.php'); ?>
