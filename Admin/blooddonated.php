@@ -75,6 +75,9 @@ if($_SESSION['loginstatus']=="")
 <tr><td class="lefttd">Donar Name</td><td><input type="text" name="t1" required="required" pattern="[a-zA-Z0-9 ]{5,15}" title="please enter donar name"></td></tr>
 </td></tr>
 
+<tr><td class="lefttd">Gender</td><td><input type="radio" name="r1" value="male" checked="checked" />Male <input type="radio" name="r1" value="female"/>Female</td></tr>
+</td></tr>
+
 <tr><td class="lefttd">Unit</td><td><input type="number" name="t2" required="required" pattern="[a-zA-Z0-9 ]{5,15}" title="please enter blood unit"></td></tr>
 </td></tr>
 
@@ -112,7 +115,12 @@ $s="select * from camp";
 <tr><td class="lefttd">Donation Date</td><td><input type="text" name="t3" required="required"  id="datepicker" title="please enter donation date"></td></tr>
 
 </td></tr>
-<tr><td class="lefttd">Adhaar No</td><td><input type="number" name="t4" required="required" pattern="[a-zA-Z0-9 ]{5,15}" title="please enter donar adhaar no"></td></tr>
+<tr><td class="lefttd">Contact No</td><td><input type="number" name="t4" required="required" pattern="[a-zA-Z0-9 ]{5,15}" title="please enter donar contact no"></td></tr>
+</td></tr>
+</td></tr>
+
+</td></tr>
+<tr><td class="lefttd">Adhaar No</td><td><input type="number" name="t5" required="required" pattern="[a-zA-Z0-9 ]{5,15}" title="please enter donar adhaar no"></td></tr>
 </td></tr>
 </td></tr>
 
@@ -131,7 +139,7 @@ if(isset($_POST["sbmt"]))
 {
 
     $cn=makeconnection();
-            $s="insert into blooddonated(name,unit,camp,date,adhaar) values('" . $_POST["t1"] ."','" . $_POST["t2"] . "','" . $_POST["s1"] . "','" . $_POST["t3"] . "','" . $_POST["t4"] . "')";
+            $s="insert into blooddonated(name,gender,unit,camp,date,contact,adhaar) values('" . $_POST["t1"] ."','" . $_POST["r1"] . "','" . $_POST["t2"] . "','" . $_POST["s1"] . "','" . $_POST["t3"] . "','" . $_POST["t4"] . "','" . $_POST["t5"] . "')";
             
             
     $q=mysqli_query($cn,$s);
