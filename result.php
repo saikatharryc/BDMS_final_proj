@@ -81,11 +81,15 @@
 $cn=makeconnection();
 //$s="select * from donarregistration,bloodgroup where donarregistration.b_id='". $_REQUEST["bg"]."' and donarregistration.b_id=bloodgroup.bg_id";
 
-$s = "SELECT blooddonated.name,blooddonated.gender,bloodgroup.bg_name,blooddonated.unit,camp.camp_title,blooddonated.date,blooddonated.contact FROM blooddonated JOIN bloodgroup JOIN camp WHERE blooddonated.groups=bloodgroup.bg_id AND camp.camp_id=blooddonated.camp AND ,blooddonated.adhaar ='". $_REQUEST["bg"]."'";
-
+$s = "SELECT blooddonated.name,blooddonated.gender,bloodgroup.bg_name,blooddonated.unit,camp.camp_title,blooddonated.date,blooddonated.contact FROM blooddonated JOIN bloodgroup JOIN camp WHERE blooddonated.groups=bloodgroup.bg_id AND camp.camp_id=blooddonated.camp AND blooddonated.adhaar =".$_REQUEST["bg"];
+//print_r($s); exit();
 	$result=mysqli_query($cn,$s);
 	//$r=mysqli_num_rows($result);
 	//echo $r;
+  if (!$result) {
+    printf("Error: %s\n", mysqli_error($cn));
+    exit();
+}
   $data=mysqli_fetch_array($result);
 	//$n=0;
 	//while($data=mysqli_fetch_array($result))
@@ -131,8 +135,9 @@ $s = "SELECT blooddonated.name,blooddonated.gender,bloodgroup.bg_name,blooddonat
 
 		
 </form>
+<br>
 </div>
-
+<br><br>
      <div class="clear"></div>
 <div class="ftr-bg">
 <div class="wrap">
