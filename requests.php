@@ -61,7 +61,7 @@
 
                    
 
-<tr><td class="lefttd" align="center"> Name:</td><td><input type="text" name="t1" required="required" pattern="[a-zA-Z _]{5,15}" title="please enter only character  between 5 to 15 for donor name" /></td></tr>
+<tr><td class="lefttd" align="center"> Name:</td><td><input type="text" name="t1" required="required" pattern="[a-zA-Z _]{1,50}" title="please enter only character  between 5 to 15 for donor name" /></td></tr>
  <tr><td>&nbsp;</td></tr>
 <tr><td class="lefttd" align="center">Gender</td><td><input name="r1" type="radio" value="male" checked="checked">Male<input name="r1" type="radio" value="female">Female</td></tr>
  <tr><td>&nbsp;</td></tr>
