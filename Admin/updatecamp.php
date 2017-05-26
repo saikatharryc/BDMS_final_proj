@@ -50,7 +50,7 @@ if($_SESSION['loginstatus']=="")
 <?php include('function.php'); ?>
 
        <form method="post" enctype="multipart/form-data">
-<table border="0" align="center" width="400" height="500px" class="shaddoww">
+<table border="0" align="center" width="600" height="500px" class="shaddoww">
 <tr><td colspan="2" align="center" class="toptd">Update Camp </td></tr>
 <tr><td colspan="2">&nbsp;</td></tr>
 <tr><td class="lefttd">Select camp </td><td><select name="s3" required><option value="">Select</option>
@@ -104,8 +104,8 @@ $s="select * from camp where camp_id='" .$_POST["s3"] ."'";
 }
 ?>
 </td></tr>
-<tr><td class="lefttd">Camp Title</td><td><input type="text" name="t3" value="<?php if(isset($_POST["show"])){echo $camp_title;} ?>"/ required="required" pattern="[a-zA-Z0-9]{5,40}" title="please enter only character or numbers between 5 to 40 for camp title"></td></tr>
-<tr><td class="lefttd">Organized By</td><td><input type="text" name="t2" value="<?php if(isset($_POST["show"])){echo $organized_by;} ?>" required="required" pattern="[a-zA-Z0-9]{5,45}" title="please enter only character or numbers between 5 to 45 for organizer name"/></td></tr>
+<tr><td class="lefttd">Camp Title</td><td><input type="text" name="t3" value="<?php if(isset($_POST["show"])){echo $camp_title;} ?>"/ required="required"  title="please enter only character or numbers between 5 to 40 for camp title"></td></tr>
+<tr><td class="lefttd">Organized By</td><td><input type="text" name="t2" value="<?php if(isset($_POST["show"])){echo $organized_by;} ?>" required="required"  title="please enter only character or numbers between 5 to 45 for organizer name"/></td></tr>
 <tr><td class="lefttd">State </td><td><select name="s1" required><option value="">Select</option>
 
 <?php
