@@ -191,9 +191,7 @@ $apikey = "c9r0lXsciQa07l3CaJ6E";
 $senderid  =  "CUVREV"; 
 // // mobile number comes from $numbr
 $mobile  = $_POST['t3']; 
-// // Message content
-$message = "Hi ".$_POST['t1']." ,\n Your Request for ".$_POST["t4"]." blood has been recorded.  \n we will contact you soon.\n Thank You!"; 
-$message = urlencode($message);
+
 
 		
 	$cn=makeconnection();
@@ -202,8 +200,26 @@ $message = urlencode($message);
 			
 			
 	$q=mysqli_query($cn,$s);
-	mysqli_close($cn);
+	//mysqli_close($cn);
 	
+$s = "SELECT bg_name FROM `bloodgroup` WHERE bg_id=".$_POST["t4"];
+//print_r($s); exit();
+	$result=mysqli_query($cn,$s);
+	//$r=mysqli_num_rows($result);
+	//echo $r;
+  if (!$result) {
+    printf("Error: %s\n", mysqli_error($cn));
+    exit();
+}
+  $data=mysqli_fetch_array($result);
+//print_r($data);exit;
+
+mysqli_close($cn);
+	
+	// // Message content
+$message = "Hi ".$_POST['t1']." ,\n Your Request for ". $data[0]." blood has been recorded.  \n we will contact you soon.\n Thank You!"; 
+$message = urlencode($message);
+
 	$ch = curl_init("http://smshorizon.co.in/api/sendsms.php?user=".$user."&apikey=".$apikey."&mobile=".$mobile."&senderid=".$senderid."&message=".$message."&type=txt"); 
     curl_setopt($ch, CURLOPT_HEADER, 0);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
