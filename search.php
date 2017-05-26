@@ -119,7 +119,7 @@ $s="select * from bloodgroup where bg_id='" .$_POST["s2"] ."'";
             </td></tr>
         <tr><td colspan="2">&nbsp;</td></tr>
         <tr><td>&nbsp;</td><td>       
-<tr><td>&nbsp;</td><td><input type="submit" value="Search" onclick="myFunction()" name="sbmt" style="border:0px; background:linear-gradient(#900,#D50000); width:100px; height:30px; border-radius:10px 1px 10px 1px; box-shadow:1px 1px 5px black; color:white; font-weight:bold; font-size:14px; text-shadow:1px 1px 6px black; "></td></tr>
+<tr><td>&nbsp;</td><td><input type="submit" value="Search" name="sbmt" style="border:0px; background:linear-gradient(#900,#D50000); width:100px; height:30px; border-radius:10px 1px 10px 1px; box-shadow:1px 1px 5px black; color:white; font-weight:bold; font-size:14px; text-shadow:1px 1px 6px black; "></td></tr>
 
                         <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
               
@@ -157,15 +157,15 @@ $s="select * from bloodgroup where bg_id='" .$_POST["s2"] ."'";
 	
 </div>
 
-<!--<?php 
+<?php 
 if(isset($_POST["sbmt"]))
 {
 	//header("location:result.php?bg=".$_POST["s2"]);
-	//echo "<script>location.replace('result.php?bg=". $_POST["s2"] ."');</script>";
+	echo "<script>location.replace('result.php?bg=". $_POST["t3"] ."');</script>";
 	
 }
 
-?>!-->
+?>
 
 </body>
 </html>
