@@ -129,6 +129,23 @@ $s = "SELECT blooddonated.name,blooddonated.gender,bloodgroup.bg_name,blooddonat
                     </td></tr></table></td></tr>
                
    <?php }
+
+   else {
+    ?>
+         
+            <table cellpadding="0" cellspacing="0" width="700px" height="150px" style="margin:auto; border:none;" class="tableborder">
+            <tr><td width="100px"  align="center" style="vertical-align:middle">
+
+             <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No Result Found</td></tr>
+
+             <tr><td colspan="2">&nbsp;</td></tr>
+
+             </table>
+             </td></tr></table></td></tr>
+             
+  <?php
+
+   }
    ?>
            </table></td></tr></table></form>
 
